@@ -1,0 +1,11 @@
+{% extends "waste/base.html" %}
+{% block upcoming_events %}
+<h1>Upcoming Events</h1>
+<ul>
+  {% for event in events %}
+    <li>{{ event.title }} – {{ event.date }} <br> {{ event.description }}</li>
+  {% endfor %}
+</ul>
+{% endblock upcoming_events %}
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>

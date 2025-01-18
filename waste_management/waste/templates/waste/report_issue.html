@@ -1,0 +1,10 @@
+{% extends "waste/base.html" %}
+{% block content %}
+<h1>Report an Issue</h1>
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="description" placeholder="Describe the issue" required></textarea><br>
+    <input type="url" name="photo_url" placeholder="Photo URL (optional)"><br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
