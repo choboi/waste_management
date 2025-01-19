@@ -1,20 +1,8 @@
-{% extends "waste/base.html" %}
+{% extends 'waste/base.html' %}
+{% block title %}Dashboard{% endblock %}
 {% block content %}
-<h1>Welcome {{ user.username }}</h1>
-
-<h2>Notifications</h2>
-{% if notifications %}
-    <ul>
-        {% for notification in notifications %}
-            <li>{{ notification.message }} – {{ notification.date }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No notifications at this time.</p>
-{% endif %}
-
-<nav>
-    <a href="{% url 'report_issue' %}">Report an Issue</a>
-    <a href="{% url 'events' %}">View Events</a>
-</nav>
+<h1>Welcome, {{ user.username }}</h1>
+<p>This is your dashboard.</p>
+<a href="{% url 'report_issue' %}" class="btn btn-primary">Report an Issue</a>
+<a href="{% url 'events' %}" class="btn btn-secondary">View Events</a>
 {% endblock %}
