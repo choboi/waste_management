@@ -4,7 +4,7 @@ from . import views
 app_name = 'waste'
 
 urlpatterns = [
-    path('', views.dashboard, name='dashboard'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('report/', views.report_issue, name='report_issue'),
     path('events/', views.events, name='events'),
     path('login/', views.login_user, name='login'),

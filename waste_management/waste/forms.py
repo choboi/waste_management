@@ -4,13 +4,13 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 class RegisterForm(UserCreationForm):
-    Email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True)  # Corrected the field name to lowercase
 
     class Meta:
-        Model = User
-        Fields = ['username', 'email', 'password1', 'password2']
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
 
 
 class LoginForm(AuthenticationForm):
-    Username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    Password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
